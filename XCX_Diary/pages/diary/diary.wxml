@@ -1,0 +1,90 @@
+<view bindtouchstart='touchStart' bindtouchmove='touchMove'>
+  <view class='margin-xl bg-white padding-xl radius shadow-lg' style="background-image:url('url:bgImgUrl')">
+    <view class='text-center margin-bottom text-lg  text-grey'>关于正在做的Diary</view>
+    <view class='text-content'>
+      <view>看到这里的小伙伴们，你们好呀\(^o^)/~</view>
+      <view class='margin-top-sm'>这个项目是我开始接触小程序的第一个项目，目的是为了熟悉小程序的布局，和熟悉一下后端搭建。</view>
+      <view class='margin-top-sm'>目前，因为我要去完成课业相关任务，该代码还只是UI设计，具体后端操作我会在空闲时间逐步完成，完成后也将上传到Github上，还请各位期待。</view>
+      <view class='margin-top-sm'>我还要在这里感谢 文晓港 的ColorUI组件库。该项目正是在他的基础上完成的。我将在这里附上ColorUI的地址：https://www.color-ui.com/</view>
+      <view class='margin-top-sm'>更多功能敬请期待！</view>
+
+      <view class='margin-top-sm'> 《——侧滑发现更多一》 </view>
+
+    </view>
+  </view>
+
+  <view class="cu-modal drawer-modal justify-end {{modalName=='DrawerModalR'?'show':''}}" bindtap='hideModal'>
+    <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;">
+      <view class='cu-list menu text-left'>
+
+        <view class='cu-item'>
+          <view class='content'>
+            <view>字体颜色</view>
+            <view class='grid col-5 padding-xs'>
+              <view wx:for="{{ColorList}}" wx:key>
+                <button class='cu-btn  bg-{{item.name}} soild radius shadow-blur'></button>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class='cu-item'>
+          <view class='content'>
+            <view>日记标签</view>
+            <view class='grid col-3 padding-xs'>
+              <view wx:for="{{DiaryLabel}}" wx:key>
+                <button class='cu-btn  bg-{{item.color}} soild radius shadow-blur light'>{{item.label}}</button>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+
+  <view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap='hideModal'>
+    <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;">
+      <view class='cu-list menu text-left'>
+
+        <view class='cu-item'>
+          <view class='content'>
+            <view>背景颜色(深色）</view>
+            <view class='grid col-5 padding-xs'>
+              <view wx:for="{{ColorList}}" wx:key>
+                <button class='cu-btn  bg-{{item.name}} soild radius shadow-blur'></button>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class='cu-item'>
+          <view class='content'>
+            <view>背景颜色(浅色）</view>
+            <view class='grid col-5 padding-xs'>
+              <view wx:for="{{ColorList}}" wx:key wx:if="{{index<12}}">
+                <button class='cu-btn  bg-{{item.name}} soild radius shadow-blur light' bindtap="bgImageTap" data-target="Hello"></button>
+              </view>
+            </view>
+          </view>
+        </view>
+
+
+        <view class='cu-item'>
+          <view class='content'>
+            <view>图片背景</view>
+            <view class='image_show '>
+
+              <view wx:for="{{bgImageList}}" wx:key>
+                <image bindtap="bgImageTap" class=" soild radius shadow-blur" data-name='{{item.url}}' src='{{item.url}}'></image>
+              </view>
+
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

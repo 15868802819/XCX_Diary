@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/date/date",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/main/main",
+    "pages/user/user",
+    "pages/test/test",
+    "pages/userInfo/userInfo",
+    "pages/diary/diary",
+    "pages/adddiary/adddiary"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "Diary",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color":"#a9b7b7",
+    "selectedColor":"#1296db",
+    "borderStyle":"white",
+    "这是注释掉的：position":"top",
+    "list":[
+      {
+        "selectedIconPath":"images/tabBar/dateOK.png",
+        "iconPath":"images/tabBar/dateNo.png",
+        "pagePath":"pages/date/date",
+        "text":"日志"
+      },
+      
+      {
+        "selectedIconPath":"images/tabBar/mainOK.png",
+        "iconPath":"images/tabBar/mainNo.png",
+        "pagePath":"pages/main/main",
+        "text":"主页"
+      },
+      {
+        "selectedIconPath":"images/tabBar/userOK.png",
+        "iconPath":"images/tabBar/userNo.png",
+        "pagePath":"pages/user/user",
+        "text":"用户"
+      }
+    ]
+  }
+}

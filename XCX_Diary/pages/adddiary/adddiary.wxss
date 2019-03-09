@@ -1,0 +1,17 @@
+/* pages/adddiary/adddiary.wxss */
+.cartLeft{
+position:relative;
+width:560rpx;
+margin-bottom:15rpx;
+border-top:4rpx solid;
+
+
+}
+.diary{
+  height:1000rpx;
+}
+
+.image_show{
+  mode:widthFix;
+  width:350rpx;
+}

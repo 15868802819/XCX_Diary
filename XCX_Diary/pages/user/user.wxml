@@ -1,0 +1,52 @@
+<view class='UCenter-bg'>
+   
+   <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+    
+     <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image> 
+    <view class="{{index%2==0?'icon-female':'icon-male'}}">
+        <text class="userinfo-nickname text-xxl text-bold">{{userInfo.nickName}}</text>
+    </view>
+
+
+      
+      
+    </block>
+  </view>
+  
+  
+
+  <image src='https://image.weilanwl.com/gif/wave.gif' mode='scaleToFill' class='gif-wave'></image>
+</view>
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+ 
+  <view class="cu-item arrow">
+    <navigator class='content' url='../userInfo/userInfo' hover-class='none'>
+      <text class='icon-friendfavor text-grey'></text>
+      <text class='text-grey'>个人中心</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class='content' url='../log/log' hover-class='none'>
+      <text class='icon-formfill text-grey'></text>
+      <text class='text-grey'>日志整理</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <view class='content' bindtap="showQrcode">
+      <text class='icon-appreciatefill text-grey'></text>
+      <text class='text-grey'>赞赏支持</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <button class='cu-btn content' open-type='feedback'>
+      <text class='icon-writefill text-grey'></text>
+      <text class='text-grey'>意见反馈</text>
+    </button>
+  </view>
+  
+</view>
+
+<view class='cu-tabbar-height'></view>

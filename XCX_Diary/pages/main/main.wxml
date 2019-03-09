@@ -1,0 +1,32 @@
+<swiper class="card-swiper square-dot}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{imgUrls}}" wx:key>
+    <!--这里为了方便以后图片的更换，我应该怎么弄-->
+    <view class='bg-img shadow-blur' style="background-image:url({{item}})"></view>
+  </swiper-item>
+</swiper>
+
+
+  <view class='cu-item'>
+    <view class='content'>
+      <view class='text-lg image_show text-bold'>背景购买</view>
+      <view class='grid col-2'>
+       
+          <view wx:for="{{bgImageList}}" wx:key>
+           <view class='image_show'>
+            <image bindtap="bgImageTap" class=" soild radius shadow-blur" data-name='{{item.url}}' src='{{item.url}}'></image>
+            <button class='cu-btn line-mauve light btn-center text-center'> 购买 </button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+<!--使位于底部-->
+<view class='padding-xs flex align-center'>
+  <view class='flex-sub text-center'>
+    <view class='text-xs'>
+      <text class='text-gray'>我于杀戮之中绽放 亦如黎明中的花朵</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+/* pages/diary/diary.wxss */
+.image_show{
+ mode:widthFix;
+ width:350rpx;
+}

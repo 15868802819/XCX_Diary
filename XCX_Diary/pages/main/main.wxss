@@ -1,0 +1,12 @@
+/* pages/main/main.wxss */
+.image_show{
+
+margin-top:40rpx;
+  margin-left:40rpx;
+ mode:widthFix;
+ width:300rpx;
+}
+.btn-center
+{
+  margin-left:25%;
+}

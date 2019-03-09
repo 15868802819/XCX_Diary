@@ -1,0 +1,57 @@
+<view class="cu-timeline">
+  <view class="cu-time">昨天</view>
+
+  <view class="cu-item">
+    <view class="cu-card case">
+      <view wx:for="{{1}}" wx:key class="cu-item shadow">
+        <navigator class='image' url="../diary/diary">
+          <image src="https://img-blog.csdnimg.cn/20190227211130457.jpg" mode="widthFix"></image>
+          <view class="cu-tag bg-blue">游戏</view>
+          <view class='cu-bar bg-shadeBottom'>我耶格今天才没被▄︻┻┳═一…… ☆</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-item text-red icon-attentionforbidfill ">
+    <navigator class="content" url="../diary/diary">
+      <view class="cu-capsule radius">
+        <view class="cu-tag line-cyan ">上午</view>
+        <view class="cu-tag bg-cyan light">10:00</view>
+        <view class="cu-tag bg-mauve light">天晴</view>
+      </view>
+      <view class='margin-top'>进看守所的感觉像回家一样，我一年回家，大年三十 晚上我都不回去，就平时家里出点事，我就回去看看这样子，在看守所里面的感觉，比家里面感觉好多了，在家里面一个人很无聊，都没有朋友，女朋友玩 ，进了里面去个个都是人才，说话又好听，超 喜欢在里面。</view>
+    </navigator>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">03-06</view>
+  
+  <view class="cu-item text-blue">
+
+    <view class="cu-card case ">
+      <view wx:for="{{1}}" wx:key class="cu-item shadow">
+        <view class='image'>
+          <image src="https://img-blog.csdnimg.cn/20190227211130766.jpg" mode="widthFix"></image>
+          <view class="cu-tag bg-blue">上课笔记</view>
+           <view class='cu-bar bg-shadeBottom'>学好数理化，秃头秃得早</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-item">
+    <view class="content">
+      <view class="cu-capsule radius">
+        <view class="cu-tag line-cyan ">上午</view>
+        <view class="cu-tag bg-cyan light">10:00</view>
+        <view class="cu-tag bg-mauve light">天晴</view>
+      </view>
+      <view class='margin-top'>进看守所的感觉像回家一样，我一年回家，大年三十 晚上我都不回去，就平时家里出点事，我就回去看看这样子，在看守所里面的感觉，比家里面感觉好多了，在家里面一个人很无聊，都没有朋友，女朋友玩 ，进了里面去个个都是人才，说话又好听，超 喜欢在里面。</view>
+    </view>
+  </view>
+</view>
+
+<view bindtap='addDiary'>
+  <text class=' icon-roundadd text-blue add_icon '></text>
+</view>

@@ -1,0 +1,11 @@
+/* pages/date/date.wxss */
+.swiper image {
+  width: 100%;
+  height: auto;
+}
+.add_icon{
+  position:fixed;
+  font-size: 60rpx;
+  bottom:30rpx;
+  right:20rpx;
+}

@@ -1,0 +1,54 @@
+<view class="cu-form-group bg-white solid-bottom">
+  <view class='content'>
+    <text class='text-grey text-lg'>头像</text>
+  </view>
+  <view class="action">
+    <image bindtap="bindViewTap" class="cu-avatar m round" src="{{userInfo.avatarUrl}}"></image>
+  </view>
+</view>
+
+<view class="cu-form-group">
+  <view class='content'>
+    <text class='text-grey text-lg'>昵称</text>
+  </view>
+  <view class="action">
+    <text class='text-grey text-lg'>飞凕</text>
+  </view>
+</view>
+
+<view class="cu-form-group">
+  <view class='content'>
+    <text class='text-grey text-lg'>生日</text>
+  </view>
+  <picker mode="date" value="{{date}}" start="1900-01-01" end="2019-12-31" bindchange="DateChange">
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+</view>
+
+<view class="cu-form-group">
+  <view class='content'>
+    <text class='text-grey text-lg'>地址</text>
+  </view>
+  <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      {{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
+</view>
+
+<view class="cu-form-group">
+<view class='content'>
+    <text class='text-grey text-lg'>性别</text>
+  </view>
+  <switch class='switch-sex' checked></switch>
+ </view>
+<view class="cu-form-group">
+<view class='content'>
+    <text class='text-grey text-lg'>个性签名</text>
+  </view>
+ </view>
+    <view class="cu-form-group" wx:hide="{{modalName==null}}">
+    <textarea placeholder="太过轻易，难成大道..." maxlength="-1" disabled="{{modalName!=null}}" placeholder-class='placeholder'></textarea>
+  </view>
