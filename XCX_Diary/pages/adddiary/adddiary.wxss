@@ -7,11 +7,21 @@ border-top:4rpx solid;
 
 
 }
+
+.image_show{
+ mode:widthFix;
+ width:350rpx;
+}
 .diary{
   height:1000rpx;
 }
-
-.image_show{
-  mode:widthFix;
-  width:350rpx;
+.label{
+  width:250rpx;
+}
+.labelCenter{
+  margin-left: 25%; 
+}
+.diaryContent
+{
+  width:100%;
 }

@@ -3,3 +3,12 @@
  mode:widthFix;
  width:350rpx;
 }
+.diary{
+  height:1000rpx;
+}
+.label{
+  width:250rpx;
+}
+.labelCenter{
+  margin-left: 25%; 
+}

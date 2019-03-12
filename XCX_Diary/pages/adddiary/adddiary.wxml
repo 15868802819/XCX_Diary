@@ -1,5 +1,5 @@
 <view bindtouchstart='touchStart' bindtouchmove='touchMove'>
-  <view class='diary margin-xl padding-xl radius shadow-lg bg-img bg-mask ' style="background-image:url('https://albedo-theme.com/wp-content/uploads/2016/08/pexels-photo-26180.jpg')">
+  <view class='diary margin-xl {{isImg=="Img"?"bg-img":""}} bg-{{color}} {{isLight=="light"?"light":""}} padding-xl radius shadow-lg' style='background-image:url({{bgImgUrl}})'>
 
     <input placeholder="两字短标题" class='radius text-white text-center margin-bottom text-lg ' name='input'></input>
 
@@ -7,76 +7,119 @@
 
     <view class='text-content text-white margin-bottom text-lg wx:hide="{{modalName==null}}'>
 
-      <textarea placeholder="多行文本输入框" maxlength="-1" disabled="{{modalName!=null}}" placeholder-class='placeholder'></textarea>
+      <textarea class="diaryContent text-{{txtColor}}" placeholder="多行文本输入框" maxlength="-1" disabled="{{modalName!=null}}" placeholder-class='placeholder'></textarea>
 
 
     </view>
   </view>
 
+  <view class="cu-modal drawer-modal justify-end {{modalName=='DrawerModalR'?'show':''}}" bindtap='hideModal'>
+    <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;">
+      <view class='cu-list menu text-left'>
 
-<view class="cu-modal drawer-modal justify-end {{modalName=='DrawerModalR'?'show':''}}" bindtap='hideModal'>
-  <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;">
-    <view class='cu-list menu text-left'>
-
-      <view class='cu-item'>
-        <view class='content'>
-          <view>字体颜色</view>
-          <view class='grid col-5 padding-xs'>
-            <view wx:for="{{ColorList}}" wx:key>
-              <button class='cu-btn  bg-{{item.name}} soild radius shadow-blur'></button>
+        <view class='cu-item'>
+          <view class='content'>
+            <view>字体颜色</view>
+            <view class='grid col-5 padding-xs'>
+              <view wx:for="{{ColorList}}" wx:key>
+                <button bindtap='SetTxtColor' data-color='{{item.name}}' class='cu-btn  bg-{{item.name}} soild radius shadow-blur'></button>
+              </view>
             </view>
           </view>
         </view>
+
+        <view class='cu-item'>
+          <view class='content'>
+            <view>日记标签</view>
+            <view class='grid col-3 padding-xs'>
+              <view wx:for="{{DiaryLabel}}" wx:key>
+                <button class='cu-btn  bg-{{item.color}} soild radius shadow-blur light'>{{item.label}}</button>
+              </view>
+              <view class="action">
+                <button class='cu-btn bg-blue shadow-blur light soild radius' bindtap="addLabel" data-target="DialogModal2">Add</button>
+              </view>
+
+
+            </view>
+          </view>
+        </view>
+
       </view>
-
-
     </view>
   </view>
-</view>
 
 
-<view class="cu-modal scroll_image drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap='hideModal'>
-  <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;">
-    <view class='cu-list menu text-left'>
 
-      <view class='cu-item'>
-        <view class='content'>
-          <view>背景颜色(深色）</view>
-          <view class='grid col-5 padding-xs'>
-            <view wx:for="{{ColorList}}" wx:key>
-              <button class='cu-btn  bg-{{item.name}} soild radius shadow-blur'></button>
+  <view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap='hideModal'>
+    <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;">
+      <view class='cu-list menu text-left'>
+
+        <view class='cu-item'>
+          <view class='content'>
+            <view>背景颜色(深色）</view>
+            <view class='grid col-5 padding-xs'>
+              <view wx:for="{{ColorList}}" wx:key>
+                <button bindtap='SetColor' data-color='{{item.name}}' class='cu-btn  bg-{{item.name}} soild radius shadow-blur'></button>
+              </view>
             </view>
           </view>
         </view>
-      </view>
 
-      <view class='cu-item'>
-        <view class='content'>
-          <view>背景颜色(浅色）</view>
-          <view class='grid col-5 padding-xs'>
-            <view wx:for="{{ColorList}}" wx:key wx:if="{{index<12}}">
-              <button class='cu-btn  bg-{{item.name}} soild radius shadow-blur light'></button>
+        <view class='cu-item'>
+          <view class='content'>
+            <view>背景颜色(浅色）</view>
+            <view class='grid col-5 padding-xs'>
+              <view wx:for="{{ColorList}}" wx:key wx:if="{{index<12}}">
+                <button bindtap='SetLightColor' data-color='{{item.name}}' data-target="light" class='cu-btn  bg-{{item.name}} soild radius shadow-blur light'></button>
+              </view>
             </view>
           </view>
-
         </view>
-      </view>
 
 
-       <view class='cu-item'>
+        <view class='cu-item'>
           <view class='content'>
             <view>图片背景</view>
-            <view class='image_show padding-xm'>
+            <view class='image_show '>
 
               <view wx:for="{{bgImageList}}" wx:key>
-                <image class=" soild radius shadow-blur" src='{{item.url}}'></image>
+                <image bindtap="SetBgImage" class=" soild radius shadow-blur" data-name='{{item.url}}' data-target="Img" src='{{item.url}}'></image>
               </view>
 
             </view>
           </view>
         </view>
 
+      </view>
     </view>
   </view>
 </view>
+
+<view class="cu-modal {{labelName=='DialogModal2'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class='content'>添加新标签</view>
+      <view class='action' bindtap='hideModal'>
+        <text class='icon-close text-red'></text>
+      </view>
+    </view>
+    <view class='padding-xl'>
+      <view class="box  bg-white text-center radius {{block?'flex-direction':''}}">
+       <view class='content text-white' >aaa</view>
+        <input placeholder="请输入新标签内容" class='labelCenter label radius bg-{{labelColor}} soild radius shadow-blur light' name='input'></input>
+        <view class='content text-white' >aaa</view>
+        <view class='grid col-5 padding-xs'>
+          <view wx:for="{{ColorList}}" wx:key wx:if="{{index<12}}">
+            <button bindtap='SetLabelColor' data-color='{{item.name}}' class='cu-btn  bg-{{item.name}} soild radius shadow-blur light'></button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="cu-bar bg-white">
+      <view class='action margin-0 flex-sub text-green ' bindtap='hideModal'>
+        <view class='action margin-0 flex-sub text-green solid-left' bindtap='hideModal'>取消</view>
+        <view class='action margin-0 flex-sub  solid-left' bindtap='hideModal'>确定</view>
+      </view>
+    </view>
+  </view>
 </view>

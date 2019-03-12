@@ -29,7 +29,7 @@
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <navigator class='content' url='../log/log' hover-class='none'>
+    <navigator class='content' url='../logs/logs' hover-class='none'>
       <text class='icon-formfill text-grey'></text>
       <text class='text-grey'>日志整理</text>
     </navigator>
