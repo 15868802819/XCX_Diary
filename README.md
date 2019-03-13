@@ -8,7 +8,7 @@
 
 作品展示：
 
-![](C:\Users\lenovo\Desktop\XCX_UI(1).gif)
+![Image text](https://github.com/XCBYXS/TempImage/blob/master/XcxImage/XCX_UI(1).gif)
 
 由于GIF图的大小限制，这里并未展示完全，但是基本的功能已经展示。
 
@@ -24,4 +24,4 @@
 
 因为这是初次尝试小程序的UI，设计感不足，结构不合理之处还希望各位能够帮我指出，期待大家的共同进步。
 
-![](C:\Users\lenovo\Desktop\选甚春秋.jpg)
+![Image text](https://github.com/XCBYXS/TempImage/blob/master/XcxImage/%E9%80%89%E7%94%9A%E6%98%A5%E7%A7%8B.jpg)
