@@ -11,6 +11,9 @@
 ![Image text](https://github.com/XCBYXS/TempImage/blob/master/XcxImage/XCX_UI(1).gif)
 
 由于GIF图的大小限制，这里并未展示完全，但是基本的功能已经展示。
+这真的是GIF图，要是卡的啥都看不了，
+只能麻烦去https://www.bilibili.com/video/av46137862/这里看了。
+为什么GIF这么卡呢，我也很无奈（┓( ´∀` )┏）
 
 ### **使用**
 
